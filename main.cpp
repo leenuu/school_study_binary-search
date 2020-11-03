@@ -11,16 +11,16 @@ int main()
     base();
 
     /*char a[100] = "test";
-    
+
     scanf("%s", sen);
 
     if (strcmp(sen,a) == 0)
         printf("o");
     else
         printf("x");*/
-    while (true)
+    
+    while(true)
     {
-
         printf("찾을 단어를 검색하십시오\n");
         scanf("%s", sen);
 
@@ -51,7 +51,7 @@ int main()
         //printf("%s\n", sen);
 
         s_range = Range[(int)sen[0] - first_Ac];
-        printf("%d\n", s_range.first);
+        //printf("%d\n", s_range.first);
 
         for (int i = s_range.first - 1; i <= s_range.last - 1; i++)
             if (word[i].len == len)
@@ -60,11 +60,11 @@ int main()
 
         first = 0;
         last = _word.size() - 1;
-        
-        for (int i = first; i <= last ; i++)
+        /*
+        for (int i = first; i <= last; i++)
             printf("%s\n", _word[i].sen);
-
-        printf("%d\n", _word.size());
+            */
+        //printf("%d\n", _word.size());
 
         while (true)
         {
@@ -82,7 +82,7 @@ int main()
             else if ((int)sen[1 + ad] == (int)_word[mid].sen[1 + ad])
             {
                 if (strcmp(sen, _word[mid].sen) == 0)
-                {   
+                {
                     t_word = _word[mid];
                     break;
                 }
@@ -91,7 +91,7 @@ int main()
                     mid = _mid;
                     break;
                 }
-                    
+
                 f_num = mid - 2;
                 l_num = mid + 2;
 
@@ -144,8 +144,8 @@ int main()
         printf("%s\n\n", t_word.mean);
         //printf("%d", len);
 
-        continue;
+        //continue;
     }
 }
-      
+
 
