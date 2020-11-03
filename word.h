@@ -85,6 +85,8 @@ int last = 0;
 int mid = 0;
 int f_num = 0;
 int l_num = 0;
+int f_num_ = 0;
+int l_num_ = 0;
 
 int _word_size = 0;
 
