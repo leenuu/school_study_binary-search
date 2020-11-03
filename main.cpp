@@ -23,7 +23,9 @@ int main()
     {
         printf("찾을 단어를 검색하십시오\n");
         scanf("%s", sen);
-
+        if (strcmp(qu, sen) == 0)
+            break;
+        
         while (sen[num] != NULL)
         {
             len++;
@@ -32,15 +34,16 @@ int main()
 
         for (int i = 0; i < len; i++)
         {
-            if (sen[i] <= 90 && sen[i] >= 65)
+            if ((int)sen[i] <= 90 && (int)sen[i] >= 65)
+            {
                 sen[i] = tolower(sen[i]);
-
-            if (sen[i] < 65 || 90 < sen[i] < 97 || sen[i] > 122)
+                continue;
+            }
+            if ((int)sen[i] < 65 || (90 < (int)sen[i] and (int)sen[i] < 97) || (int)sen[i] > 122)
             {
                 err = 1;
                 break;
             }
-
 
         }
         if (err == 1)
@@ -56,7 +59,8 @@ int main()
         for (int i = s_range.first - 1; i <= s_range.last - 1; i++)
             if (word[i].len == len)
                 _word.push_back(word[i]);
-
+        if (_word.empty())
+            err_st = 200;
 
         first = 0;
         last = _word.size() - 1;
@@ -72,13 +76,22 @@ int main()
             if (sen[len - 1] == _word[mid].sen[len - 1])
                 break;
                 */
+            if (err_st == 200)
+                break;
+
             mid = (first + last) / 2;
-            _mid = mid + 1;
+        
 
             if ((int)sen[1 + ad] < (int)_word[mid].sen[1 + ad])
+            {
                 last = mid;
+                err_st++;
+            }
             else if ((int)sen[1 + ad] > (int)_word[mid].sen[1 + ad])
+            {
                 first = mid;
+                err_st++;
+            }
             else if ((int)sen[1 + ad] == (int)_word[mid].sen[1 + ad])
             {
                 if (strcmp(sen, _word[mid].sen) == 0)
@@ -86,11 +99,7 @@ int main()
                     t_word = _word[mid];
                     break;
                 }
-                else if (strcmp(sen, _word[_mid].sen) == 0)
-                {
-                    mid = _mid;
-                    break;
-                }
+               
 
                 f_num = mid - 2;
                 l_num = mid + 2;
@@ -99,8 +108,11 @@ int main()
                 {
                     if ((int)sen[1 + ad] == (int)_word[f_num].sen[1 + ad])
                     {
-                        f_num = f_num - 2;
-                        continue;
+                        if (f_num >= 2)
+                        {
+                            f_num = f_num - 2;
+                            continue;
+                        }
                     }
 
                     f_num = f_num + 1;
@@ -115,8 +127,12 @@ int main()
                 {
                     if ((int)sen[1 + ad] == (int)_word[l_num].sen[1 + ad])
                     {
-                        l_num = l_num + 2;
-                        continue;
+                        if (l_num <= _word.size() - 3)
+                        {
+                            l_num = l_num + 2;
+                            continue;
+                        }
+                        
                     }
 
                     l_num = l_num - 1;
@@ -138,10 +154,18 @@ int main()
                     break;
                 }
                 ad++;
+                err_st++;
             }
+
+           
+            
         }
 
-        printf("%s\n\n", t_word.mean);
+        if (err_st == 200)
+            printf("사전에 존재하지 않는 단어입니다.\n\n");
+        else
+            printf("%s\n\n", t_word.mean);
+        reset();
         //printf("%d", len);
 
         //continue;
