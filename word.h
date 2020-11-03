@@ -77,6 +77,7 @@ vector<Word> word;
 vector<Word> _word;
 
 char sen[100];
+char qu[100] = "quite()";
 
 int first = 0;
 int last = 0;
@@ -84,17 +85,15 @@ int mid = 0;
 int f_num = 0;
 int l_num = 0;
 
-int _word_size = 0;
-
 int ad = 0;
 
 int i = 0;
 int len = 0;
 int num = 0;
 
-int _mid = 0;
-
 int err = 0;
+int err_st = 0;
+
 
 void base()
 {
@@ -1942,7 +1941,7 @@ void base()
     word.push_back({ (int)word.size() + 1,"noon", "정오",4 });
     word.push_back({ (int)word.size() + 1,"nor", "-도 또한-않다",3 });
     word.push_back({ (int)word.size() + 1,"norm", "표준", 4 });
-    word.push_back({ (int)word.size() + 1,"normal", "표준(의)",6});
+    word.push_back({ (int)word.size() + 1,"normal", "표준(의)",6 });
     word.push_back({ (int)word.size() + 1,"north", "북, 북 쪽, 북부", 5 });
     word.push_back({ (int)word.size() + 1,"nose", "코",4 });
     word.push_back({ (int)word.size() + 1,"not", "아니다", 3 });
@@ -3129,5 +3128,22 @@ void base()
 void reset()
 {
     
+    _word.clear();
+
+    first = 0;
+    last = 0;
+    mid = 0;
+    f_num = 0;
+    l_num = 0;
+
+
+    ad = 0;
+
+    i = 0;
+    len = 0;
+    num = 0;
+    
+    err = 0;
+    err_st = 0;
 
 }
