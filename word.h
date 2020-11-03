@@ -2,55 +2,55 @@
 #define last_Ac 122
 
 #define first_a 1
-#define last_a 218
-#define first_b 219
-#define last_b 393
-#define first_c 394
-#define last_c 720
-#define first_d 721
-#define last_d 906
-#define first_e 907
-#define last_e 1049
-#define first_f 1050
-#define last_f 1206
-#define first_g 1207
-#define last_g 1296
-#define first_h 1297
-#define last_h 1391
+#define last_a 217
+#define first_b 218
+#define last_b 392
+#define first_c 393
+#define last_c 719
+#define first_d 720
+#define last_d 905
+#define first_e 906
+#define last_e 1048
+#define first_f 1049
+#define last_f 1205
+#define first_g 1206
+#define last_g 1295
+#define first_h 1296
+#define last_h 1390
 #define first_i 1392
-#define last_i 1505
-#define first_j 1506
-#define last_j 1525
-#define first_k 1526
-#define last_k 1541
-#define first_l 1542
-#define last_l 1638
-#define first_m 1639
-#define last_m 1769
-#define first_n 1770
-#define last_n 1836
-#define first_o 1837
-#define last_o 1905
-#define first_p 1906
-#define last_p 2140
-#define first_q 2141
-#define last_q 2152
-#define first_r 2153
-#define last_r 2312
-#define first_s 2313
-#define last_s 2650
-#define first_t 2651
-#define last_t 2815
-#define first_u 2816 
-#define last_u 2848
-#define first_v 2849
-#define last_v 2894
-#define first_w 2895
-#define last_w 2988
-#define first_y 2989
-#define last_y 2997
-#define first_z 2998
-#define last_z 3000
+#define last_i 1504
+#define first_j 1505
+#define last_j 1524
+#define first_k 1525
+#define last_k 1540
+#define first_l 1541
+#define last_l 1637
+#define first_m 1638
+#define last_m 1768
+#define first_n 1779
+#define last_n 1835
+#define first_o 1836
+#define last_o 1904
+#define first_p 1905
+#define last_p 2138
+#define first_q 2139
+#define last_q 2150
+#define first_r 2151
+#define last_r 2310
+#define first_s 2311
+#define last_s 2648
+#define first_t 2649
+#define last_t 2813
+#define first_u 2814
+#define last_u 2846
+#define first_v 2847
+#define last_v 2892
+#define first_w 2893
+#define last_w 2986
+#define first_y 2987
+#define last_y 2995
+#define first_z 2996
+#define last_z 2998
 
 #pragma warning(disable: 4996)
 
@@ -76,8 +76,6 @@ Word t_word;
 vector<Word> word;
 vector<Word> _word;
 
-
-
 char sen[100];
 
 int first = 0;
@@ -85,19 +83,18 @@ int last = 0;
 int mid = 0;
 int f_num = 0;
 int l_num = 0;
-int f_num_ = 0;
-int l_num_ = 0;
 
 int _word_size = 0;
 
 int ad = 0;
 
-int num_ascii = 0;
-
 int i = 0;
 int len = 0;
 int num = 0;
 
+int _mid = 0;
+
+int err = 0;
 
 void base()
 {
@@ -236,7 +233,7 @@ void base()
     word.push_back({ (int)word.size() + 1,"although", "비록 -일지라도", 8 });
     word.push_back({ (int)word.size() + 1,"altogether", "전혀", 10 });
     word.push_back({ (int)word.size() + 1,"always", "늘", 6 });
-    word.push_back({ (int)word.size() + 1,"A.M.", "오전", 4 });
+    //word.push_back({ (int)word.size() + 1,"A.M.", "오전", 4 });
     word.push_back({ (int)word.size() + 1,"amaze", "깜짝 놀라게 하다", 5 });
     word.push_back({ (int)word.size() + 1,"ambassador", "대사", 10 });
     word.push_back({ (int)word.size() + 1,"ambition", "야심", 8 });
@@ -2132,7 +2129,7 @@ void base()
     word.push_back({ (int)word.size() + 1,"plenty", "많음", 6 });
     word.push_back({ (int)word.size() + 1,"plot", "음모",4 });
     word.push_back({ (int)word.size() + 1,"plus", "더하기의 -외에",4 });
-    word.push_back({ (int)word.size() + 1,"P.M.", "오후",4 });
+    //word.push_back({ (int)word.size() + 1,"P.M.", "오후",4 });
     word.push_back({ (int)word.size() + 1,"pocket", "포켓",6 });
     word.push_back({ (int)word.size() + 1,"poem", "시", 4 });
     word.push_back({ (int)word.size() + 1,"poet", "시인", 4 });
@@ -3127,4 +3124,10 @@ void base()
     word.push_back({ (int)word.size() + 1,"zebra", "얼룩말", 5 });
     word.push_back({ (int)word.size() + 1,"zone", "대", 4 });
     word.push_back({ (int)word.size() + 1,"zoo", "동물원", 3 });
+}
+
+void reset()
+{
+    
+
 }
