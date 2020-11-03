@@ -33,12 +33,13 @@ int main()
         if (word[i].len == len)
             _word.push_back(word[i]);
                   
-        
+   
     first = 0;
     last = _word.size() -  1;
+    /*
     for (int i = first; i <= last; i++)
         printf("%s\n", _word[i].sen);
-
+    */
     //mid = (first + last) / 2;
 
     printf("%d\n", _word.size());
