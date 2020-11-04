@@ -48,6 +48,7 @@ int main()
         }
         if (err == 1)
         {
+            printf("입력할 수 없는 문자가 존재합니다. 다시 입력해주세요.\n\n");
             reset();
             continue;
         }
@@ -104,16 +105,20 @@ int main()
                 }
 
                 
-                if (f_num >= 2)
+                if (mid >= 2)
                     f_num = mid - 2;
-                else
+                else if (mid == 1)
                     f_num = mid - 1;
+                else if (mid == 0)
+                    f_num = mid;
                 
 
-                if (l_num <= _word.size() - 3)
+                if (mid <= _word.size() - 3)
                     l_num = mid + 2;
-                else
+                else if (mid == _word.size() - 2)
                     l_num = mid + 1;
+                else if (mid == _word.size() - 1)
+                    l_num = mid;
                     
                 //f_num = f_num - 2;
                 //l_num = l_num + 2;
