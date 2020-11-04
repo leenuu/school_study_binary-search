@@ -77,7 +77,7 @@ vector<Word> word;
 vector<Word> _word;
 
 char sen[100];
-char qu[100] = "quite()";
+char qu[100] = "quit()";
 
 int first = 0;
 int last = 0;
