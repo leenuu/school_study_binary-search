@@ -103,17 +103,20 @@ int main()
                     break;
                 }
 
-
+                
                 if (f_num >= 2)
-                    f_num = f_num - 2;
+                    f_num = mid - 2;
                 else
                     f_num = mid - 1;
-
+                
 
                 if (l_num <= _word.size() - 3)
-                    l_num = l_num + 2;
+                    l_num = mid + 2;
                 else
                     l_num = mid + 1;
+                    
+                //f_num = f_num - 2;
+                //l_num = l_num + 2;
 
                 while (true)
                 {
