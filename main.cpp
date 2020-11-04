@@ -18,14 +18,14 @@ int main()
         printf("o");
     else
         printf("x");*/
-    
-    while(true)
+
+    while (true)
     {
         printf("찾을 단어를 검색하십시오\n");
         scanf("%s", sen);
         if (strcmp(qu, sen) == 0)
             break;
-        
+
         while (sen[num] != NULL)
         {
             len++;
@@ -53,7 +53,10 @@ int main()
         }
         //printf("%s\n", sen);
 
-        s_range = Range[(int)sen[0] - first_Ac];
+        if((int)sen[0] == 121 || (int)sen[0] == 122)
+            s_range = Range[(int)sen[0] - first_Ac - 1];
+        else
+            s_range = Range[(int)sen[0] - first_Ac];
         //printf("%d\n", s_range.first);
 
         for (int i = s_range.first - 1; i <= s_range.last - 1; i++)
@@ -68,7 +71,7 @@ int main()
         for (int i = first; i <= last; i++)
             printf("%s\n", _word[i].sen);
             */
-        //printf("%d\n", _word.size());
+            //printf("%d\n", _word.size());
 
         while (true)
         {
@@ -80,7 +83,7 @@ int main()
                 break;
 
             mid = (first + last) / 2;
-        
+
 
             if ((int)sen[1 + ad] < (int)_word[mid].sen[1 + ad])
             {
@@ -99,10 +102,18 @@ int main()
                     t_word = _word[mid];
                     break;
                 }
-               
 
-                f_num = mid - 2;
-                l_num = mid + 2;
+
+                if (f_num >= 2)
+                    f_num = f_num - 2;
+                else
+                    f_num = mid - 1;
+
+
+                if (l_num <= _word.size() - 3)
+                    l_num = l_num + 2;
+                else
+                    l_num = mid + 1;
 
                 while (true)
                 {
@@ -132,7 +143,7 @@ int main()
                             l_num = l_num + 2;
                             continue;
                         }
-                        
+
                     }
 
                     l_num = l_num - 1;
@@ -143,22 +154,24 @@ int main()
                     break;
                 }
 
-                if (strcmp(sen, _word[first].sen) == 0)
-                {
-                    t_word = _word[first];
-                    break;
-                }
-                if (strcmp(sen, _word[last].sen) == 0)
-                {
-                    t_word = _word[last];
-                    break;
-                }
+                
                 ad++;
                 err_st++;
             }
 
-           
-            
+            if (strcmp(sen, _word[first].sen) == 0)
+            {
+                t_word = _word[first];
+                break;
+            }
+            if (strcmp(sen, _word[last].sen) == 0)
+            {
+                t_word = _word[last];
+                break;
+            }
+
+
+
         }
 
         if (err_st == 200)
