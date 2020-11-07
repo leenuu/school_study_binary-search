@@ -4,6 +4,7 @@
 #include <string.h> 
 #include <sstream>
 #include <fstream>
+#include <windows.h>
 #include "word.h"
 
 int main()
@@ -25,6 +26,12 @@ int main()
         scanf("%s", sen);
         if (strcmp(qu, sen) == 0)
             break;
+        if (strcmp(cls, sen) == 0)
+		{
+			system("cls");
+			reset();
+			continue;
+		}
 
         while (sen[num] != NULL)
         {
